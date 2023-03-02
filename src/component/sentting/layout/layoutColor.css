@@ -1,0 +1,24 @@
+.setting_Box_Color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.setting_Box_Color_Content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Box_ChangeColor {
+  padding: 16px;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-left: 24px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  animation: fadeOut 0.5s ease-out both;
+  animation: fadeIn 0.5s ease-in both;
+}
+.Box_ChangeColor:hover {
+  transform: scale(1.15);
+}

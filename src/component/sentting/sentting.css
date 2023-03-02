@@ -1,0 +1,62 @@
+.NavHori_IconSetting:hover {
+  animation-direction: reverse;
+}
+.NavHori_IconSetting:hover {
+  color: rgb(228, 178, 63);
+  /* animation: rotation 3s infinite linear; */
+  animation: rotation 3s linear 0s infinite normal;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -3%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -3%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.NavHori_IconSetting {
+  animation: fadeOut 0.3s ease-out both;
+  animation: fadeIn 0.3s ease-in both;
+}
+.Box_Sentting {
+  position: absolute;
+  margin: 0 10px 10px 0;
+  bottom: 0;
+  right: 0;
+}
+.Box_Sentting_Button {
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.Box_Sentting_Button:hover {
+  transform: scale(1.1);
+}
+.Box_Sentting_Button:active {
+  transform: scale(0.9);
+}

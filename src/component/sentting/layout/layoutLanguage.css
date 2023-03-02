@@ -1,0 +1,15 @@
+.setting_Box_Theme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.setting_Box_Theme_Content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Button_Theme_Chagne:hover {
+  color: rgb(255, 255, 255);
+  animation: rotation 1.5s linear 0s infinite normal;
+}
