@@ -8,18 +8,22 @@ import ThemeContext from "../../../theme/themeBackground";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 
+// redux
+import { useAppDispatch } from "../../../store/store";
+import { setLanguage } from "../../../store/slices/PagesSlices";
+
 type Props = {};
 
 const LayoutLanguage: React.FC<any> = (props: Props) => {
   const { t, i18n } = useTranslation();
-  const changeLanguage = (lng: any) => {
-    i18n.changeLanguage(lng);
-  };
+  // const changeLanguage = (lng: any) => {
+  //   i18n.changeLanguage(lng);
+  // };
+  const dispatch = useAppDispatch();
   const { theme, toggleTheme }: any = React.useContext(ThemeContext);
 
   const Change_Lang = (lang: string) => {
-    changeLanguage(lang);
-    localStorage.setItem("lng", lang);
+    dispatch(setLanguage(lang));
   };
 
   return (

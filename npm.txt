@@ -1,0 +1,18 @@
+npm init vite@latest ReactMap -- --template react-ts
+
+npm install @mui/material @emotion/react @emotion/styled @mui/icons-material @mui/material @mui/x-data-grid react-router-dom @types/react-router-dom axios moment react-moment react-redux redux  react-i18next i18next react-helmet @types/react-helmet @reduxjs/toolkit
+npm @types/leaflet react-leaflet leaflet
+npm i --save-dev @types/node
+npm i material-ui-search-bar
+npm install material-react-table @mui/material @mui/icons-material @emotion/react @emotion/styled
+
+
+# Page Components
+// In Pages
+npm i -g create-react-component-folder
+cd src/components/pages
+npx crcf -f --notest --typescript LoginPage 
+
+
+npm install -g typescript
+tsc -v

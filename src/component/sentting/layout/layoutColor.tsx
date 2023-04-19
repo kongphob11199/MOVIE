@@ -92,10 +92,10 @@ const LayoutColor: React.FC<any> = (props: Props) => {
     },
   ];
   const Style_colorCodeName_false = {
-    border: `3px solid ${theme.color_Text}`,
+    border: `0.5px solid ${theme.color_Text}`,
   };
   const Style_colorCodeName_true = {
-    border: `3px solid #FF5733`,
+    border: `0.5px solid #FF5733`,
   };
   const color_mainORsecondary = useSelector(ThemeSelector);
 

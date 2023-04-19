@@ -4,12 +4,16 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Button, Stack } from "@mui/material";
 import ThemeContext from "../../../theme/themeBackground";
+// icon
+import MenuIcon from "@mui/icons-material/Menu";
 
 type NavHorizontalProps = {
-  //
+  toggleDrawerLeft: () => void;
 };
 
-const NavHorizontal: React.FC<any> = () => {
+const NavHorizontal: React.FC<any> = ({
+  toggleDrawerLeft,
+}: NavHorizontalProps) => {
   const { t, i18n } = useTranslation();
   const { theme, toggleTheme }: any = React.useContext(ThemeContext);
   const Style_NavHori: object = {
@@ -27,7 +31,18 @@ const NavHorizontal: React.FC<any> = () => {
   return (
     <>
       <Box sx={Style_NavHori}>
-        <Box>NavHorizontal</Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Box sx={{ mr: "1rem" }} onClick={() => toggleDrawerLeft()}>
+            <MenuIcon />
+          </Box>
+          <Box>NavHorizontal</Box>
+        </Box>
         {/* <Box sx={Style_NavHori_Box}> */}
         <Stack direction="row" spacing={2} sx={Style_NavHori_Box}>
           <Button

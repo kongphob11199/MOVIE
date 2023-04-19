@@ -1,0 +1,122 @@
+.HomePage_First {
+  width: 100vw;
+}
+.HomePage_First_Wallpaper {
+  position: relative;
+  height: 50%;
+  max-height: 650px;
+  width: 100vw;
+}
+.HomePage_First_Wallpaper:hover {
+  cursor: pointer;
+}
+.HomePage_First_Wallpaper img {
+  object-fit: cover;
+  max-width: 100%;
+  width: 100vw;
+  margin: auto;
+  display: block;
+  max-height: 600px;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  /* animation-fill-mode: forwards; */
+}
+.Wallpaper_Content_img {
+  position: relative;
+  display: flex;
+}
+.Wallpaper_Content_img_arrow {
+  position: absolute;
+  height: 100%;
+  opacity: 0.3;
+  z-index: 1200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Wallpaper_Content_arrow:hover {
+  cursor: pointer;
+  /* background-color: rgb(46, 46, 46); */
+}
+.arrow_left {
+  left: 0;
+}
+.arrow_left:hover {
+  cursor: pointer;
+  background-image: linear-gradient(to left, rgb(0, 0, 0, 0), #08091a);
+}
+.arrow_right {
+  right: 0;
+}
+.arrow_right:hover {
+  cursor: pointer;
+  background-image: linear-gradient(to right, rgb(0, 0, 0, 0), #08091a);
+}
+.HomePage_First_Wallpaper_overlay {
+  position: absolute;
+  width: 100vw;
+  /* padding: 10rem; */
+  z-index: 1;
+  bottom: 0px;
+  height: 30%;
+  width: 100vw;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start; */
+
+  /* background-image: linear-gradient(rgb(0, 0, 0, 0), #08091a); */
+
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.HomePage_First_Wallpaper_overlay:hover {
+  opacity: 1;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.HomePage_First_Wallpaper_Content {
+  position: absolute;
+  left: 5%;
+  max-width: fit-content;
+  width: 90%;
+}
+.Wallpaper_Content_title {
+  font-size: 3rem;
+  font-weight: bolder;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.line_title {
+  width: 10px;
+  max-height: 72px;
+  height: 0px;
+  background-color: red;
+  margin-right: 0.5rem;
+  animation: line_title_H 1s forwards;
+}
+@keyframes line_title_H {
+  0% {
+    height: 26px;
+  }
+  50% {
+    height: 52px;
+  }
+  100% {
+    height: 72px;
+  }
+}
+.dis_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
