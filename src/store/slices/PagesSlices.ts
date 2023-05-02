@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
+import logo from "../../assets/logo/leaf-svgrepo-com.png";
 // เปลี่ยนภาษา
 import i18n from "i18next";
 
@@ -7,12 +8,14 @@ export type PagesState = {
   Pages_Show: number;
   LanguageCurrent: string;
   API_Movie: string;
+  LogoPage: string;
 };
 
 const initialValues: PagesState = {
   Pages_Show: 1,
   LanguageCurrent: "en",
   API_Movie: "",
+  LogoPage: logo,
 };
 
 const PagesSlice = createSlice({

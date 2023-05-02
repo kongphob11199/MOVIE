@@ -1,12 +1,14 @@
 import * as React from "react";
 import "./Home.css";
 import { Helmet } from "react-helmet";
+import { Outlet } from "react-router-dom";
 
 import Box from "@mui/material/Box";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 
+// redux
 import { useSelector } from "react-redux";
-
+import { useAppDispatch } from "../../../store/store";
 import {
   PagesSelector,
   PagesState,
@@ -19,9 +21,10 @@ import NavHorizontal from "../../navbar/navHorizontal/navHorizontal";
 import ThemeContext from "../../../theme/themeBackground";
 import Sentting from "../../sentting";
 import SenttingList from "../../sentting/senttingList";
-import Home_Page from "./Home_Page";
 
-import { useAppDispatch } from "../../../store/store";
+// page
+import PageFirst from "./Home_Page/Pages/PageFirst";
+
 type HomeProps = {
   //
 };
@@ -51,9 +54,9 @@ const Home: React.FC<any> = () => {
     backgroundColor: theme.main,
     color: theme.color_Text,
     transition: "0.2s ease-in-out",
+    height: "100%",
   };
 
-  const PagesNow: PagesState = useSelector(PagesSelector);
   const local_lng = localStorage.getItem("lng");
   // console.log("local_lng", local_lng);
   const dispatch = useAppDispatch();
@@ -81,18 +84,17 @@ const Home: React.FC<any> = () => {
           )}
         </SwipeableDrawer>
 
-        <Box className="Box_Sentting">
-          <div onClick={toggleDrawer(true, "right")}>
-            <Sentting />
-          </div>
-        </Box>
-
-        <div
-        // onWheel={(e: React.WheelEvent<HTMLDivElement>) => handleOnWheel(e)}
-        >
-          <Home_Page />
+        <div>
+          {/* <PageFirst /> */}
+          <Outlet />
         </div>
       </div>
+
+      <Box className="Box_Sentting">
+        <div onClick={toggleDrawer(true, "right")}>
+          <Sentting />
+        </div>
+      </Box>
     </>
   );
 };

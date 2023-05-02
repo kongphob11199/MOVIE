@@ -1,0 +1,124 @@
+.Home_Movie {
+  /* background-color: green; */
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 5rem;
+}
+@media only screen and (max-width: 500px) {
+  .Home_Movie {
+    padding: 2rem 1rem;
+  }
+}
+.Home_Movie_typeText {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.Box_Movie_card {
+  position: relative;
+  width: 100%;
+  /* border: 3px solid #eb3a3a; */
+  border-radius: 10px;
+  padding: 3rem 1rem;
+  overflow: auto;
+  transform: translateX(0px);
+  transition: 0.3s ease-in-out;
+  /* cursor: grab; */
+}
+
+/* .Movie_card {
+  width: 180px;
+  cursor: pointer;
+  margin: 0px 5px;
+}
+.Movie_card img {
+  width: 180px;
+} */
+.container {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+.container::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+  display: none;
+}
+
+.container::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.Movie_card_arrow {
+  position: sticky;
+  background-color: #eb3a3a;
+  z-index: 1200;
+  height: 40px;
+  color: white;
+  border-radius: 7px;
+}
+.Movie_card_ArrowLeft {
+  left: 0;
+}
+.Movie_card_ArrowLeft:hover {
+  background-color: #a12020;
+}
+.Movie_card_ArrowRight {
+  right: 0;
+}
+.Movie_card_ArrowRight:hover {
+  background-color: #a12020;
+}
+.skeleton {
+  /* padding: 15px; */
+  max-width: 180px;
+  width: 100%;
+  /* background: #fff; */
+  /* margin-bottom: 20px; */
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2),
+    0 1px 8px 0 rgba(0, 0, 0, 0.12);
+}
+.skeleton .square {
+  height: 270px;
+  width: 180px;
+  border-radius: 5px;
+  background: rgba(130, 130, 130, 0.2);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(8%, rgba(130, 130, 130, 0.2)),
+    color-stop(18%, rgba(130, 130, 130, 0.3)),
+    color-stop(33%, rgba(130, 130, 130, 0.2))
+  );
+  background: linear-gradient(
+    to right,
+    rgba(130, 130, 130, 0.2) 8%,
+    rgba(130, 130, 130, 0.3) 18%,
+    rgba(130, 130, 130, 0.2) 33%
+  );
+  background-size: 800px 100px;
+  animation: wave-squares 2s infinite ease-out;
+}
+.skeleton-right {
+  flex: 1;
+}
+@keyframes wave-squares {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}

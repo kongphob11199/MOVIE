@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./navHorizontal.css";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { Box, Button, Stack } from "@mui/material";
@@ -14,6 +15,7 @@ type NavHorizontalProps = {
 const NavHorizontal: React.FC<any> = ({
   toggleDrawerLeft,
 }: NavHorizontalProps) => {
+  const Navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const { theme, toggleTheme }: any = React.useContext(ThemeContext);
   const Style_NavHori: object = {
@@ -28,6 +30,7 @@ const NavHorizontal: React.FC<any> = ({
     justifyContent: "space-between",
     alignItems: "center",
   };
+
   return (
     <>
       <Box sx={Style_NavHori}>
@@ -41,11 +44,13 @@ const NavHorizontal: React.FC<any> = ({
           <Box sx={{ mr: "1rem" }} onClick={() => toggleDrawerLeft()}>
             <MenuIcon />
           </Box>
-          <Box>NavHorizontal</Box>
+          <Box sx={{ cursor: "pointer" }} onClick={() => Navigate("/")}>
+            NavHorizontal
+          </Box>
         </Box>
         {/* <Box sx={Style_NavHori_Box}> */}
         <Stack direction="row" spacing={2} sx={Style_NavHori_Box}>
-          <Button
+          {/* <Button
             variant="contained"
             color="primary"
             sx={{
@@ -54,7 +59,7 @@ const NavHorizontal: React.FC<any> = ({
             }}
           >
             {t("login")}
-          </Button>
+          </Button> */}
         </Stack>
         {/* </Box> */}
       </Box>

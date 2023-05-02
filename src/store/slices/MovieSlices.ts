@@ -11,7 +11,7 @@ import {
   api_lang,
 } from "../../config";
 
-interface MoviesArray<T> {
+export interface MoviesArray<T> {
   [index: number]: T;
 }
 export interface Movies_popular {
@@ -28,6 +28,7 @@ export interface Movies_popular {
 export interface MoviesState {
   Movies_popular: MoviesArray<Movies_popular>;
   Movies_popular_ShowOne: Movies_popular;
+  Loading_wallpaper: boolean;
 }
 
 const initialValues: MoviesState = {
@@ -42,6 +43,7 @@ const initialValues: MoviesState = {
     title: "",
     vote_average: 0,
   },
+  Loading_wallpaper: false,
 };
 
 const MoviesSlice = createSlice({
@@ -60,17 +62,33 @@ const MoviesSlice = createSlice({
     ) => {
       state.Movies_popular_ShowOne = action.payload;
     },
+    setLoading_wallpaper: (
+      state: MoviesState,
+      action: PayloadAction<boolean>
+    ) => {
+      state.Loading_wallpaper = action.payload;
+    },
   },
 });
 
+export const {
+  setMovies_popular,
+  setMovies_popular_ShowOne,
+  setLoading_wallpaper,
+} = MoviesSlice.actions;
+export const MoviesSelector = (store: RootState) => store.MoviesReducer;
+export default MoviesSlice.reducer;
+
 export function getdataMovies_Popuplar(lng: string) {
   return async (dispatch: any) => {
+    dispatch(setLoading_wallpaper(true));
     const url_lang = `${api_lang}${lng}`;
     const url = `${path_Movie}${path_typeMovie.popular}${api_key}${url_lang}`;
     await axios.get(url).then((res) => {
       dispatch(setMovies_popular(res.data.results));
       //   console.log("res", res.data.results);
     });
+    dispatch(setLoading_wallpaper(false));
   };
 }
 export function setOneDataMovies_Popuplar(data: Movies_popular) {
@@ -78,8 +96,3 @@ export function setOneDataMovies_Popuplar(data: Movies_popular) {
     dispatch(setMovies_popular_ShowOne(data));
   };
 }
-
-export const { setMovies_popular, setMovies_popular_ShowOne } =
-  MoviesSlice.actions;
-export const MoviesSelector = (store: RootState) => store.MoviesReducer;
-export default MoviesSlice.reducer;

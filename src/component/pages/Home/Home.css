@@ -1,4 +1,23 @@
-.Home {
+/* .Home {
   height: 100vh;
-  /* background-color: rgb(8, 9, 26); */
+  background-color: rgb(8, 9, 26);
+} */
+/* .Home::-webkit-scrollbar {
+  width: 10px;
 }
+
+
+.Home::-webkit-scrollbar-track {
+  background: #ffffff00;
+  
+}
+
+
+.Home::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+
+.Home::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} */
