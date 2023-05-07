@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./Home.css";
+
 import { Helmet } from "react-helmet";
 import { Outlet } from "react-router-dom";
 
@@ -69,6 +70,7 @@ const Home: React.FC<any> = () => {
       <Helmet>
         <title>Home</title>
       </Helmet>
+
       <div className="Home" style={Style_Home}>
         <NavHorizontal toggleDrawerLeft={toggleDrawerLeft} />
         <SwipeableDrawer

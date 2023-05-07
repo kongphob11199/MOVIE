@@ -1,4 +1,5 @@
 export const th: object = {
+  Home: "หน้าแรก",
   //register
   register: "สมัครสมาชิก",
   regis_success: "สมัครสมาชิกสำเร็จ",

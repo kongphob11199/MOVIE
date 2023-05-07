@@ -8,11 +8,17 @@ import { api_key, api_lang, path_Movie } from "../../../config";
 type VideoPlayerProps = {
   Movie_id: number;
   LanguageCurrent: string;
+  setMuted?: boolean;
+  setPlaying?: boolean;
+  setControls?: boolean;
 };
 
 const VideoPlayer: React.FC<any> = ({
   Movie_id,
   LanguageCurrent,
+  setMuted = true,
+  setPlaying = true,
+  setControls = false,
 }: VideoPlayerProps) => {
   const [videoKey, setVideoKey] = useState<string>("");
 
@@ -20,9 +26,10 @@ const VideoPlayer: React.FC<any> = ({
     const fetchVideoKey = async () => {
       try {
         const response = await axios.get(
-          `${path_Movie}${Movie_id}/videos${api_key}${api_lang}${LanguageCurrent}`
+          `${path_Movie}${Movie_id}/videos${api_key}${api_lang}${"en-US"}`
         );
         const videoResults = response.data.results;
+        // console.log("videoResults", response.data.results);
         if (videoResults.length > 0) {
           setVideoKey(videoResults[0].key);
         }
@@ -38,12 +45,12 @@ const VideoPlayer: React.FC<any> = ({
   return (
     <div>
       {videoKey && (
-        <div>
+        <div style={{ height: "500px" }}>
           <ReactPlayer
             url={`https://www.youtube.com/watch?v=${videoKey}`}
-            playing={true}
-            muted={true}
-            // controls={true}
+            playing={setPlaying}
+            muted={setMuted}
+            controls={setControls}
             width="100%"
             height="100%"
           />

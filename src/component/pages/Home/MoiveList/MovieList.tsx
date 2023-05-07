@@ -34,6 +34,7 @@ export interface Movies {
   tagline: string;
   runtime: number;
   genres: genres[];
+  imdb_id: string;
 }
 
 type MovieListProps = {

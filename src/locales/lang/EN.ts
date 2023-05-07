@@ -1,4 +1,5 @@
 export const en: object = {
+  Home: "Home",
   //register
   register: "Register",
   regis: "register",

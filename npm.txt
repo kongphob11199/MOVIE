@@ -7,7 +7,7 @@ npm i material-ui-search-bar
 npm install material-react-table @mui/material @mui/icons-material @emotion/react @emotion/styled
 npm i glamor
 npm install react-player
-
+npm i styled-components
 
 
 # Page Components

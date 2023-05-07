@@ -45,23 +45,9 @@ const NavHorizontal: React.FC<any> = ({
             <MenuIcon />
           </Box>
           <Box sx={{ cursor: "pointer" }} onClick={() => Navigate("/")}>
-            NavHorizontal
+            {t("Home")}
           </Box>
         </Box>
-        {/* <Box sx={Style_NavHori_Box}> */}
-        <Stack direction="row" spacing={2} sx={Style_NavHori_Box}>
-          {/* <Button
-            variant="contained"
-            color="primary"
-            sx={{
-              fontWeight: "600",
-              // textTransform: "none"
-            }}
-          >
-            {t("login")}
-          </Button> */}
-        </Stack>
-        {/* </Box> */}
       </Box>
     </>
   );

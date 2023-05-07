@@ -20,6 +20,7 @@ import { Movies } from "../Home/MoiveList/MovieList";
 
 // pages
 import Loading_logo from "../Loading/Loading_logo";
+import VideoPlayer from "../../layout/VideoPlayer/VideoPlayer";
 
 // icon
 import { ReactSVG } from "react-svg";
@@ -27,8 +28,7 @@ import icon_star from "../../../assets/logo/star-svgrepo-com.svg";
 import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled";
 
 // mui
-import { Chip } from "@mui/material";
-import VideoPlayer from "../../layout/VideoPlayer/VideoPlayer";
+import { Button, Chip } from "@mui/material";
 
 type MovieDetailProps = {};
 
@@ -65,7 +65,7 @@ const MovieDetail: React.FC<any> = () => {
     }
   };
   useEffect(() => {
-    console.log("MovieDetail :", MovieDetail);
+    // console.log("MovieDetail :", MovieDetail);
   }, [MovieDetail, checkLoad]);
 
   const numberFormatter = new Intl.NumberFormat("en-US");
@@ -158,12 +158,29 @@ const MovieDetail: React.FC<any> = () => {
                 </div>
               </div>
             </div>
-            <div>
+            <div className="Video_MovieDetail">
               <VideoPlayer
                 Movie_id={MovieDetail.id}
                 LanguageCurrent={LanguageCurrent.API_Movie}
+                setPlaying={false}
               />
             </div>
+            {MovieDetail && MovieDetail.imdb_id && (
+              <div className="Links_Movie">
+                <a
+                  href={"https://www.imdb.com/title/" + MovieDetail.imdb_id}
+                  target="_blank"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  <button className="Btn_imdb">
+                    <p>
+                      <span>IMDb</span>
+                    </p>
+                  </button>
+                </a>
+              </div>
+            )}
+            <div className="Footer_MovieDettail"></div>
           </div>
         </div>
       )}
