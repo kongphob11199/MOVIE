@@ -57,7 +57,8 @@ const LayoutLanguage: React.FC<any> = (props: Props) => {
               variant="contained"
               sx={{ width: "45%", fontWeight: "600" }}
             >
-              {t("senttingLanguage_England")}
+              England
+              {/* {t("senttingLanguage_England")} */}
             </Button>
             <Button
               onClick={() => {
@@ -66,7 +67,8 @@ const LayoutLanguage: React.FC<any> = (props: Props) => {
               variant="contained"
               sx={{ width: "45%", fontWeight: "600" }}
             >
-              {t("senttingLanguage_Thai")}
+              ไทย
+              {/* {t("senttingLanguage_Thai")} */}
             </Button>
           </Box>
         </Box>

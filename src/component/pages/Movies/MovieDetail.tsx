@@ -72,7 +72,7 @@ const MovieDetail: React.FC<any> = () => {
   return (
     <>
       <Helmet>
-        <title>Home</title>
+        <title>Movie</title>
       </Helmet>
       {MovieDetail !== undefined && checkLoad && (
         <div className="MoiveDetail">
