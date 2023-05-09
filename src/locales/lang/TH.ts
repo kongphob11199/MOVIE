@@ -1,5 +1,8 @@
 export const th: object = {
+  // nav
   Home: "หน้าแรก",
+  search_placeholder: "ค้นหา...",
+
   //register
   register: "สมัครสมาชิก",
   regis_success: "สมัครสมาชิกสำเร็จ",

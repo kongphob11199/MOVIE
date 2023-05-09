@@ -1,1 +1,25 @@
-
+.NavHor_inputSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 0.5rem;
+  border-radius: 10px;
+}
+.NavHor_inputSearch input:focus {
+  outline: none;
+}
+.NavHor_inputSearch input {
+  padding: 0.2rem 1rem;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+}
+.icon_search {
+  margin-right: 4px;
+  height: 20px;
+}
+.NavHor_inputSearch .icon_search svg {
+  stroke: white;
+  width: 20px;
+  height: 20px;
+}

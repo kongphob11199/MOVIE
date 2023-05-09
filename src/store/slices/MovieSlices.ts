@@ -9,6 +9,7 @@ import {
   path_typeMovie,
   path_Movie,
   api_lang,
+  path_search_Movie,
 } from "../../config";
 
 export interface MoviesArray<T> {
@@ -40,6 +41,9 @@ export interface MoviesState {
   Movies_top_rated: MoviesArray<Movies_popular>;
   Movies_upcoming: MoviesArray<Movies_popular>;
   Loading_wallpaper: boolean;
+
+  dataSearch_Movies: MoviesArray<Movies_popular>;
+  Loading_Search: boolean;
 }
 
 const initialValues: MoviesState = {
@@ -62,6 +66,9 @@ const initialValues: MoviesState = {
   Movies_top_rated: [],
   Movies_upcoming: [],
   Loading_wallpaper: false,
+
+  dataSearch_Movies: [],
+  Loading_Search: false,
 };
 
 const MoviesSlice = createSlice({
@@ -98,6 +105,16 @@ const MoviesSlice = createSlice({
     ) => {
       state.Loading_wallpaper = action.payload;
     },
+
+    setDataSearch_Movies: (
+      state: MoviesState,
+      action: PayloadAction<MoviesArray<Movies_popular>>
+    ) => {
+      state.dataSearch_Movies = action.payload;
+    },
+    setLoading_Search: (state: MoviesState, action: PayloadAction<boolean>) => {
+      state.Loading_Search = action.payload;
+    },
   },
 });
 
@@ -107,6 +124,9 @@ export const {
   setMovies_top_rated,
   setMovies_upcoming,
   setLoading_wallpaper,
+
+  setDataSearch_Movies,
+  setLoading_Search,
 } = MoviesSlice.actions;
 export const MoviesSelector = (store: RootState) => store.MoviesReducer;
 export default MoviesSlice.reducer;
@@ -152,5 +172,20 @@ export function getdataMovies_Upcoming(lng: string) {
       //   console.log("res", res.data.results);
     });
     dispatch(setLoading_wallpaper(false));
+  };
+}
+
+export function SearchData_Movies(lng: string, MovieName: string) {
+  return async (dispatch: any) => {
+    dispatch(setLoading_Search(true));
+    const url_include_adult = `&include_adult=false`;
+    const url_query = `&query=${MovieName}`;
+    const url_lang = `${api_lang}${lng}`;
+    const url = `${path_search_Movie}${api_key}${url_lang}${url_include_adult}${url_query}`;
+    await axios.get(url).then((res) => {
+      dispatch(setDataSearch_Movies(res.data.results));
+      // console.log("res", res.data.results);
+    });
+    dispatch(setLoading_Search(false));
   };
 }

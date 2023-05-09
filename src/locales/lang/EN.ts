@@ -1,5 +1,8 @@
 export const en: object = {
+  // nav
   Home: "Home",
+  search_placeholder: "Search...",
+
   //register
   register: "Register",
   regis: "register",
