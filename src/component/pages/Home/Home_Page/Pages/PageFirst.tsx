@@ -27,6 +27,8 @@ import {
 } from "../../../../../store/slices/PagesSlices";
 import {
   getdataMovies_Popuplar,
+  getdataMovies_Top_Rated,
+  getdataMovies_Upcoming,
   MoviesSelector,
   setOneDataMovies_Popuplar,
 } from "../../../../../store/slices/MovieSlices";
@@ -97,6 +99,8 @@ const PageFirst: React.FC<any> = () => {
 
   React.useEffect(() => {
     dispatch(getdataMovies_Popuplar(LanguageCurrent.API_Movie));
+    dispatch(getdataMovies_Top_Rated(LanguageCurrent.API_Movie));
+    dispatch(getdataMovies_Upcoming(LanguageCurrent.API_Movie));
   }, [LanguageCurrent]);
 
   const Navigate = useNavigate();
@@ -183,6 +187,20 @@ const PageFirst: React.FC<any> = () => {
       <MovieList
         title={t("popular")}
         dataMovies={dataMovies.Movies_popular}
+        LanguageCurrent={LanguageCurrent.API_Movie}
+        Loading={dataMovies.Loading_wallpaper}
+      />
+
+      <MovieList
+        title={t("top_rated")}
+        dataMovies={dataMovies.Movies_top_rated}
+        LanguageCurrent={LanguageCurrent.API_Movie}
+        Loading={dataMovies.Loading_wallpaper}
+      />
+
+      <MovieList
+        title={t("upcoming")}
+        dataMovies={dataMovies.Movies_upcoming}
         LanguageCurrent={LanguageCurrent.API_Movie}
         Loading={dataMovies.Loading_wallpaper}
       />

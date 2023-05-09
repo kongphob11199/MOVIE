@@ -60,6 +60,8 @@ export const th: object = {
 
   // movie
   popular: "ยอดนิยม",
+  top_rated: "คะแนนสูงสุด",
+  upcoming: "กำลังมา",
   vote: "โหวต",
   mins: "นาที",
   Release_date: "วันที่ฉาย",

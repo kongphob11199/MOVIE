@@ -52,6 +52,7 @@ const MovieDetail: React.FC<any> = () => {
   }, [LanguageCurrent]);
 
   const getData = async () => {
+    // console.log("LanguageCurrent", LanguageCurrent.API_Movie);
     try {
       const response = await axios.get(
         `${path_Movie}${movie_id}${api_key}${api_lang}${LanguageCurrent.API_Movie}`

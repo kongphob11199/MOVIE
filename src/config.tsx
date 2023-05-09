@@ -17,3 +17,5 @@ export const path_typeMovie: typeMovie = {
 
 export const path_Movie: string = `${path_API}movie/`;
 export const path_Movie_img: string = `https://image.tmdb.org/t/p/original`;
+
+export const path_search_Movie = `${path_API}search/movie`;

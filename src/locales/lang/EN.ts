@@ -60,6 +60,8 @@ export const en: object = {
 
   // movie
   popular: "Popular",
+  top_rated: "Top rated",
+  upcoming: "Upcoming",
   vote: "Votes",
   mins: "Mins",
   Release_date: "Release date",
