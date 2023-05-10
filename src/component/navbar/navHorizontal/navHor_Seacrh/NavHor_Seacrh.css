@@ -4,11 +4,25 @@
   right: 20px;
   width: 228px;
   max-height: 550px;
-  z-index: 1500;
-  background-color: brown;
+  z-index: 200;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  visibility: hidden;
 }
+.fadeIn {
+  animation-name: fadeIn;
+  opacity: 1;
+  visibility: visible;
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+}
+
 .SearchMovie_Card {
   max-height: 500px;
   overflow: hidden;
@@ -17,6 +31,7 @@
   position: relative;
   width: 100%;
   height: 100px;
+
   /* border: 1px solid rgb(117, 117, 117); */
 }
 .SearchMovie_Card_Content img {
@@ -24,6 +39,26 @@
   /* object-position: 0 20%; */
   width: 100%;
   height: 100px;
+}
+.SearchMovie_Card_imgOverlay {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  opacity: 0.5;
+  background-image: linear-gradient(rgb(0, 0, 0, 0), #08091a);
+  transition: background-color 0.5s ease;
+}
+.SearchMovie_Card_imgOverlay:hover {
+  background-color: #9393958a;
+}
+.SearchMovie_Card_imgNull {
+  height: 100px;
+  width: 100%;
+  background-color: rgb(75, 75, 75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
 }
 .SearchMovie_Card_Content:hover {
   cursor: pointer;
@@ -37,4 +72,14 @@
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   z-index: 4;
+}
+.SearchMovie_VM_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s ease;
+}
+.SearchMovie_VM_content:hover {
+  background-color: #9393958a;
+  cursor: pointer;
 }

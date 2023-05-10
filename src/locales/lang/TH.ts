@@ -69,4 +69,5 @@ export const th: object = {
   mins: "นาที",
   Release_date: "วันที่ฉาย",
   Synopsis: "เรื่องย่อ",
+  View_more: "ดูเพิ่มเติม",
 };

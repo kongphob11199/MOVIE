@@ -49,7 +49,7 @@ const MovieDetail: React.FC<any> = () => {
   useEffect(() => {
     getData();
     window.scrollTo(0, 0);
-  }, [LanguageCurrent]);
+  }, [LanguageCurrent, movie_id]);
 
   const getData = async () => {
     // console.log("LanguageCurrent", LanguageCurrent.API_Movie);

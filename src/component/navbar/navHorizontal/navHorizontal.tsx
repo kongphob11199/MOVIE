@@ -51,21 +51,16 @@ const NavHorizontal: React.FC<any> = ({
   const [inputSearch, setInputSearch] = React.useState<string>("");
 
   React.useEffect(() => {
-    let timeoutId: NodeJS.Timeout | undefined;
-    if (inputSearch !== "") {
-      timeoutId = setTimeout(() => {
-        dispatch(SearchData_Movies(LanguageCurrent.API_Movie, inputSearch));
-      }, 500);
+    if (inputSearch.length >= 3) {
+      dispatch(SearchData_Movies(LanguageCurrent.API_Movie, inputSearch));
     } else {
       dispatch(setDataSearch_Movies([]));
     }
-    console.log("inputSearch", inputSearch);
-    return () => {
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-    };
   }, [inputSearch]);
+
+  const setClear_Search = () => {
+    setInputSearch("");
+  };
 
   return (
     <>
@@ -106,7 +101,12 @@ const NavHorizontal: React.FC<any> = ({
           />
         </Box>
       </Box>
-      <NavHor_Seacrh dataMovie_Search={dataMovies.dataSearch_Movies} />
+      {inputSearch !== "" && dataMovies.dataSearch_Movies[0] && (
+        <NavHor_Seacrh
+          dataMovie_Search={dataMovies.dataSearch_Movies}
+          setClear_Search={setClear_Search}
+        />
+      )}
     </>
   );
 };

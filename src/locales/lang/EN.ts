@@ -69,4 +69,5 @@ export const en: object = {
   mins: "Mins",
   Release_date: "Release date",
   Synopsis: "Synopsis",
+  View_more: "View more",
 };

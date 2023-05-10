@@ -39,7 +39,7 @@ const VideoPlayer: React.FC<any> = ({
     };
 
     fetchVideoKey();
-  }, []);
+  }, [Movie_id]);
   // console.log("video", `https://www.youtube.com/watch?v=${videoKey}`);
 
   return (
